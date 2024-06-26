@@ -4,7 +4,16 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+sqlx = { version = "0.7", default-features = false, features = [
+    "tls-native-tls",
+    "macros",
+    "postgres",
+    "uuid",
+    "chrono",
+    "json",
+] }
 actix-web = "4.3.1"
 shuttle-actix-web = "0.46.0"
 shuttle-runtime = "0.46.0"
 tokio = "1.26.0"
+shuttle-shared-db = { version = "0.36.0", features = ["postgres"] }
